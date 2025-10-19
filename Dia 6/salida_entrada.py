@@ -1,3 +1,3 @@
-mi_Archivo=open('prueba.txt')
-print(mi_Archivo)
-print(mi_Archivo.read())
+mi_archivo=open('prueba.txt')
+print(mi_archivo)
+print(mi_archivo.read())

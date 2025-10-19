@@ -26,7 +26,7 @@ def crear():
         print("Categorías disponibles:")
         for i, categoria in enumerate(Recetas.keys(), 1):
             print(f"{i}. {categoria}")
-        seleccion = input("Elige la categoría por número: ")
+        seleccion = input("Elige la categoria por número: ")
         categorias = list(Recetas.keys())
 
         if seleccion.isdigit() and 1 <= int(seleccion) <= len(categorias):

@@ -1,8 +1,4 @@
-mi_Archivo=open('prueba.txt','w')
-mi_Archivo.write=input("Escribe algo")
+mi_archivo=open('prueba.txt','w')
+mi_archivo.write=input("Escribe algo")
 
-
-
-
-
-mi_Archivo.close()
+mi_archivo.close()
