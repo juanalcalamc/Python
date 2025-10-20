@@ -1,0 +1,37 @@
+# palabra = "polimorfismo"
+# lista = ["Clases", "POO", "Polimorfismo"]
+# tupla = (1, 2, 3, 80)
+# todo=[palabra,lista,tupla]
+# for i in todo:
+#     print(len(todo))
+
+
+# palabra = "polimorfismo"
+# lista = ["Clases", "POO", "Polimorfismo"]
+# tupla = (1, 2, 3, 80)
+# todo=[palabra,lista,tupla]
+# for i in palabra:
+#     print(len(palabra))
+# for i in lista:
+#     print(len(lista))
+
+# for i in tupla:
+#     print(len(tupla))
+
+
+
+class Mago():
+    def atacar(self):
+        print("Ataque mágico")
+
+class Arquero():
+    def atacar(self):
+        print("Lanzamiento de flecha")
+
+class Samurai():
+    def atacar(self):
+        print("Ataque con katana")
+        
+personaje=[Mago,Arquero,Samurai]
+for i in personaje:
+    i.atacar
