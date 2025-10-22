@@ -3,13 +3,13 @@ from random import *
 
 
 #codigo 
-class persona:
-    def __init__(self,nombre,apellido):
+class Persona:
+    def __init__(self, nombre, apellido):
         self.nombre=nombre
         self.apellido=apellido
 
-class Cliente(persona):
-    def __init__(self,nombre,apellido,numero_cuenta, balance):
+class Cliente(Persona):
+    def __init__(self, nombre, apellido, numero_cuenta, balance):
         super().__init__(nombre,apellido)
         self.numero_cuenta = numero_cuenta
         self.balance = balance 
@@ -19,25 +19,25 @@ class Cliente(persona):
         return f"Cliente: {self.nombre} {self.apellido}, Cuenta: {self.numero_cuenta}, Balance: ${self.balance}"
         
 
-    def deporsitar (self,monto):
+    def depositar (self, monto):
         print(f"Dinero tranferido con exito ahora en tu cuenta se encuentra esta cantidad de dinero {self.balance}")
         self.balance += monto
 
-    def retirar(self,monto):
+    def retirar(self, monto):
         if monto > self.balance:
             print("No se puede retirar ese monto no tienes tanto dinero en tu cuenta")
         else:
             print("Dinero retirado con exito")
             self.balance -= monto
 
-def crear():
+def crear_usuario():
     nombre = input("Nombre: ")
     apellido = input("Apellido: ")
     numero_cuenta = randint(1000, 9999)
     balance = float(input("Balance inicial: "))
     return Cliente(nombre, apellido, numero_cuenta, balance)
 
-def cosas(cliente):
+def menu(cliente):
     var = input("¿Continuamos? Presiona S para continuar o N para cancelar: ").lower()
     while var == "s":
         var2 = input("¿Qué quieres hacer?\n1. Retirar\n2. Depositar\nOpción: ")
@@ -53,7 +53,7 @@ def cosas(cliente):
         var = input("¿Deseas hacer otra operación? (S/N): ").lower()
 
 
-def codigo(contrasena_guardada):
+def inicio_menu(contrasena_guardada):
     intentos=3
     while intentos > 0:
         contra=input("""Hola, bienvenido a bancoyo digista tu contraseña """)
@@ -61,18 +61,12 @@ def codigo(contrasena_guardada):
             print("Acceso aceptado")
             cliente=crear()
             print(cliente)
-            cosas(cliente)
+            menu(cliente)
             return
         else:
             intentos -= 1
             print(f"Haz fallado tus intentos restantes son{intentos}")
         print("Ya no tienes mas intentos")
-
-
-
-
-
-
 
 contrasena_guardada = ""
 
@@ -83,10 +77,10 @@ Opción: """)
 
 if var == "1":
     contrasena_guardada = input("Digite su contraseña: ")
-    codigo(contrasena_guardada)
+    inicio_menu(contrasena_guardada)
 elif var == "2":
     contrasena_guardada = input("Por favor crea una contraseña que puedas recordar: ")
     print("Cuenta creada exitosamente.")
-    codigo(contrasena_guardada)
+    inicio_menu(contrasena_guardada)
 else:
     print("Opción inválida.")
